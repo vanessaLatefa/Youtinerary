@@ -7,11 +7,23 @@ import { HomeListComponent } from './home/home-list/home-list.component';
 
 const routes: Routes = [
 
-  {path: 'home', loadChildren: './home/home.module#HomeModule'},
-  {path: 'portal', loadChildren: './portal/portal.module#PortalModule'},
-  {path: 'user', loadChildren: './user/user.module#userModule'},
+  {
+    path: 'home', 
+    loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path: 'portal', 
+    loadChildren: './portal/portal.module#PortalModule'
+  },
+  {
+    path: 'user', 
+    loadChildren: './user/user.module#UserModule'
+  },
 
-  {path:'' ,redirectTo : '', pathMatch:'full'}
+  {
+    path:'' ,
+    redirectTo : '', 
+    pathMatch:'full'}
     
 ];
 
