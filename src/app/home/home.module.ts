@@ -4,7 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeListComponent } from './home-list/home-list.component';
 
 @NgModule({
-  declarations: [HomeListComponent, HomeModule], 
+  declarations: [HomeListComponent], 
   imports: [
     CommonModule,
     HomeRoutingModule,
