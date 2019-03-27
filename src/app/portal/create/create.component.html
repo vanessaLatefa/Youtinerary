@@ -1,0 +1,70 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Description</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="titleCtrl" required>
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput placeholder="Location" formControlName="locationCtrl" required>
+        </mat-form-field>
+
+      <!-- Priority field-->
+      <mat-form-field>
+        <input type="text" formControlName="priorityCtrl" placeholder="Priority" matInput [matAutocomplete]="auto" required>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"></mat-autocomplete>
+            <mat-option *ngFor="let priority of priorities" [value]="priority">
+              {{priority}}
+            </mat-option>
+      </mat-form-field>
+
+      <mat-form-field>
+          <input type="text" formControlName="categoryCtrl" placeholder="Category" matInput [matAutocomplete]="auto2" required>
+            <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete" [displayWith]="getCategoryName">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category.name}}
+                  </mat-option>
+            </mat-autocomplete>
+              
+        </mat-form-field>
+  
+
+
+
+      <div>
+        <button mat-icon-button matStepperNext>
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Create Content</ng-template>
+      
+        <ckeditor [editor]="Editor" formControlName="messageCtrl" required></ckeditor>
+
+      <div>
+        <button mat-icon-button matStepperPrevious>
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button mat-icon-button matStepperNext>
+          <mat-icon>mail_outline</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [optional]="true">
+    <ng-template matStepLabel>Preview</ng-template>
+    <p>Message sent!</p>
+    <div>
+      <button mat-icon-button matStepperPrevious>
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-icon-button (click)="stepper.reset()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

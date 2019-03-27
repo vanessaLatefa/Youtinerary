@@ -7,6 +7,7 @@ import {HomeListComponent} from './home/home-list/home-list.component';
 import {MaterialModule } from './material/material';
 import { NgModule } from '@angular/core';
 import { from } from 'rxjs';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { from } from 'rxjs';
     MaterialModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    CKEditorModule
   
   ],
   providers: [],

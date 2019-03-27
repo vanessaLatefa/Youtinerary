@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//material
-import { MatTabsModule } from '@angular/material/tabs';
 import { PortalRoutingModule } from './portal-routing.module';
 import { PortalListComponent } from './portal-list/portal-list.component';
+import { CreateComponent } from './create/create.component';
+import { MaterialModule} from '../material/material';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
 @NgModule({
-  declarations: [PortalListComponent],
+  declarations: [PortalListComponent, CreateComponent],
   imports: [
     CommonModule,
-    MatTabsModule,
-    PortalRoutingModule
+    PortalRoutingModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CKEditorModule
   ]
 })
 export class PortalModule { }

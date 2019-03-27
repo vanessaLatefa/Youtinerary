@@ -1,12 +1,19 @@
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgModule} from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -15,16 +22,22 @@ import {MatSidenavModule} from '@angular/material/sidenav';
  @NgModule({
      imports: [
         MatButtonModule,
+        MatCardModule,
         MatDatepickerModule,
         MatInputModule,
         MatMenuModule,
         MatNativeDateModule,
         MatToolbarModule,
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatStepperModule,
+        MatAutocompleteModule
      ],
 
      exports: [
+        MatCardModule,
         MatButtonModule,
         MatDatepickerModule,
         MatInputModule,
@@ -32,7 +45,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatNativeDateModule,
         MatToolbarModule,
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatStepperModule,
+        MatAutocompleteModule
      ]
  })
 
